@@ -47,7 +47,7 @@ const STATUS_STYLES: Record<string, string> = {
   confirmed: 'bg-blue-100 text-blue-700 dark:bg-blue-500/20 dark:text-blue-400',
   completed: 'bg-green-100 text-green-700 dark:bg-green-500/20 dark:text-green-400',
   cancelled: 'bg-red-100 text-red-700 dark:bg-red-500/20 dark:text-red-400',
-  new: 'bg-electric-100 text-electric-700 dark:bg-electric-500/20 dark:text-electric-400',
+  new: 'bg-cyan-100 text-cyan-700 dark:bg-cyan-500/20 dark:text-cyan-400',
   read: 'bg-ink-100 text-ink-600 dark:bg-white/10 dark:text-ink-300',
   archived: 'bg-ink-100 text-ink-500 dark:bg-white/5 dark:text-ink-500',
 };
@@ -82,7 +82,7 @@ export default function AdminDashboard() {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center pt-20">
-        <Loader2 size={32} className="animate-spin text-electric-600" />
+        <Loader2 size={32} className="animate-spin text-cyan-600" />
       </div>
     );
   }
@@ -150,8 +150,8 @@ export default function AdminDashboard() {
               onClick={() => { setTab(t.id); setSearch(''); setFilter('all'); }}
               className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all whitespace-nowrap ${
                 tab === t.id
-                  ? 'bg-electric-600 text-white shadow-lg shadow-electric-600/30'
-                  : 'glass text-ink-600 dark:text-ink-300 hover:text-electric-600'
+                  ? 'bg-cyan-600 text-white shadow-lg shadow-cyan-600/30'
+                  : 'glass text-ink-600 dark:text-ink-300 hover:text-cyan-600'
               }`}
             >
               <t.icon size={16} /> {t.label}
@@ -165,7 +165,7 @@ export default function AdminDashboard() {
             <motion.div key="overview" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} className="space-y-6">
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
                 {[
-                  { label: 'Total Users', value: users.length, icon: Users, color: 'electric' },
+                  { label: 'Total Users', value: users.length, icon: Users, color: 'cyan' },
                   { label: 'Total Appointments', value: appointments.length, icon: Calendar, color: 'blue' },
                   { label: 'Pending', value: pendingAppts, icon: Clock, color: 'gold' },
                   { label: 'Messages', value: contacts.length, icon: Mail, color: 'green' },
@@ -177,7 +177,7 @@ export default function AdminDashboard() {
                         <p className="font-display text-2xl md:text-3xl font-bold text-ink-900 dark:text-white mt-1">{s.value}</p>
                       </div>
                       <div className={`w-11 h-11 rounded-xl flex items-center justify-center ${
-                        s.color === 'electric' ? 'bg-electric-600/10 text-electric-600' :
+                        s.color === 'cyan' ? 'bg-cyan-600/10 text-cyan-600' :
                         s.color === 'blue' ? 'bg-blue-500/10 text-blue-500' :
                         s.color === 'gold' ? 'bg-gold-500/10 text-gold-600' :
                         'bg-green-500/10 text-green-600'
@@ -193,7 +193,7 @@ export default function AdminDashboard() {
               <div className="grid lg:grid-cols-2 gap-4">
                 <div className="card-base p-5">
                   <h3 className="font-display font-bold text-ink-900 dark:text-white mb-3">Recent Appointments</h3>
-                  {dataLoading ? <div className="flex justify-center py-6"><Loader2 size={20} className="animate-spin text-electric-600" /></div> :
+                  {dataLoading ? <div className="flex justify-center py-6"><Loader2 size={20} className="animate-spin text-cyan-600" /></div> :
                    appointments.length === 0 ? <p className="text-sm text-ink-500 text-center py-6">No appointments</p> : (
                     <div className="space-y-2">
                       {appointments.slice(0, 4).map((a) => (
@@ -210,7 +210,7 @@ export default function AdminDashboard() {
                 </div>
                 <div className="card-base p-5">
                   <h3 className="font-display font-bold text-ink-900 dark:text-white mb-3">Recent Messages</h3>
-                  {dataLoading ? <div className="flex justify-center py-6"><Loader2 size={20} className="animate-spin text-electric-600" /></div> :
+                  {dataLoading ? <div className="flex justify-center py-6"><Loader2 size={20} className="animate-spin text-cyan-600" /></div> :
                    contacts.length === 0 ? <p className="text-sm text-ink-500 text-center py-6">No messages</p> : (
                     <div className="space-y-2">
                       {contacts.slice(0, 4).map((c) => (
@@ -248,7 +248,7 @@ export default function AdminDashboard() {
                 </div>
 
                 {dataLoading ? (
-                  <div className="flex justify-center py-12"><Loader2 size={24} className="animate-spin text-electric-600" /></div>
+                  <div className="flex justify-center py-12"><Loader2 size={24} className="animate-spin text-cyan-600" /></div>
                 ) : filteredAppointments.length === 0 ? (
                   <div className="text-center py-12">
                     <Calendar size={36} className="text-ink-300 dark:text-ink-600 mx-auto mb-2" />
@@ -309,7 +309,7 @@ export default function AdminDashboard() {
                 </div>
 
                 {dataLoading ? (
-                  <div className="flex justify-center py-12"><Loader2 size={24} className="animate-spin text-electric-600" /></div>
+                  <div className="flex justify-center py-12"><Loader2 size={24} className="animate-spin text-cyan-600" /></div>
                 ) : filteredContacts.length === 0 ? (
                   <div className="text-center py-12">
                     <Mail size={36} className="text-ink-300 dark:text-ink-600 mx-auto mb-2" />
@@ -331,7 +331,7 @@ export default function AdminDashboard() {
                         <p className="text-sm text-ink-600 dark:text-ink-300 mt-2">{c.message}</p>
                         <div className="flex gap-2 mt-3">
                           {c.status === 'new' && (
-                            <button onClick={() => updateContactStatus(c.id, 'read')} className="text-xs px-3 py-1.5 rounded-lg bg-electric-600/10 text-electric-600 hover:bg-electric-600/20 font-medium">
+                            <button onClick={() => updateContactStatus(c.id, 'read')} className="text-xs px-3 py-1.5 rounded-lg bg-cyan-600/10 text-cyan-600 hover:bg-cyan-600/20 font-medium">
                               Mark Read
                             </button>
                           )}
@@ -358,7 +358,7 @@ export default function AdminDashboard() {
               <div className="card-base p-5">
                 <h3 className="font-display font-bold text-ink-900 dark:text-white mb-4">Registered Users</h3>
                 {dataLoading ? (
-                  <div className="flex justify-center py-12"><Loader2 size={24} className="animate-spin text-electric-600" /></div>
+                  <div className="flex justify-center py-12"><Loader2 size={24} className="animate-spin text-cyan-600" /></div>
                 ) : users.length === 0 ? (
                   <div className="text-center py-12">
                     <Users size={36} className="text-ink-300 dark:text-ink-600 mx-auto mb-2" />
@@ -380,7 +380,7 @@ export default function AdminDashboard() {
                           <tr key={u.id} className="border-b border-ink-100 dark:border-white/5">
                             <td className="py-3 pr-4">
                               <div className="flex items-center gap-2">
-                                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-electric-600 to-electric-400 flex items-center justify-center text-white text-xs font-semibold">
+                                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-cyan-600 to-cyan-400 flex items-center justify-center text-white text-xs font-semibold">
                                   {(u.full_name || 'U')[0].toUpperCase()}
                                 </div>
                                 <span className="font-medium text-ink-900 dark:text-white">{u.full_name || 'Unnamed'}</span>
@@ -388,7 +388,7 @@ export default function AdminDashboard() {
                             </td>
                             <td className="py-3 pr-4 text-ink-500">{u.phone || '—'}</td>
                             <td className="py-3 pr-4">
-                              <span className={`badge text-xs ${u.role === 'admin' ? 'bg-gold-500/10 text-gold-600' : 'bg-electric-600/10 text-electric-600'}`}>
+                              <span className={`badge text-xs ${u.role === 'admin' ? 'bg-gold-500/10 text-gold-600' : 'bg-cyan-600/10 text-cyan-600'}`}>
                                 {u.role}
                               </span>
                             </td>

@@ -23,11 +23,11 @@ export const SERVICES = [
     features: ['LLM Integration', 'Predictive Models', 'Computer Vision', 'Process Automation'],
   },
   {
-    id: 'cloud-storage',
-    title: 'Cloud & Storage',
-    description: 'Secure and scalable cloud infrastructure and storage solutions.',
-    icon: 'Cloud',
-    features: ['AWS & GCP', 'Serverless', 'Auto-scaling', 'Data Security'],
+    id: 'Offline/Online Workshop',
+    title: 'Offline/Online Workshop',
+    description: 'Practical, hands-on training for teams and individuals in trending core technologies',
+    icon: 'Users',
+    features: ['Artificial Intelligence', 'Machine Learning', 'Web Development'],
   },
   {
     id: 'ui-ux-design',
@@ -124,7 +124,7 @@ export const TEAM_MEMBERS = [
     name: 'Saksham Singh',
     role: 'Client Support Executive',
     bio: 'Dedicated support professional driving customer satisfaction, rapid resolution, and seamless experiences.',
-    image: 'src/components/assets/team/Saksham-photo.png',
+    image: 'src/components/assets/team/Saksham-photo.jpeg',
     
     socials: {
       linkedin: "https://www.linkedin.com/in/saksham-singh-7671a12a7?",
@@ -148,10 +148,10 @@ export const TEAM_MEMBERS = [
     name: 'Bhumi Singh',
     role: 'Frontend Developer',
     bio: 'Specializing in building responsive, accessible, and high-performance web applications that deliver seamless user experiences.',
-    image: 'src/components/assets/favicon.png', 
+    image: 'src/components/assets/team/Bhumi-photo.png', 
   
     socials: {
-      linkedin: "-https://www.linkedin.com/in/bhumi-singh-33605335a",
+      linkedin: "https://www.linkedin.com/in/bhumi-singh-33605335a",
       github: "https://github.com/Bhumi678",
       email: "bhumisingh123b@gmail.com",
     },  
@@ -160,12 +160,12 @@ export const TEAM_MEMBERS = [
     name: 'Gaurav Gupta',
     role: 'Backend Developer',
     bio: 'Focused on architecting scalable APIs, optimizing database performance, and building secure systems.',
-    image: 'src/components/assets/favicon.png', 
+    image: 'src/components/assets/team/Gaurav-photo.png', 
   
     socials: {
-      linkedin: "-https://www.linkedin.com/in/bhumi-singh-33605335a",
-      github: "https://github.com/Bhumi678",
-      email: "bhumisingh123b@gmail.com",
+      linkedin: "https://www.linkedin.com/in/gaurav-gupta-b203171b5",
+      github: "https://github.com/gaurav19-hack",
+      email: "gauravgupta2723@gmail.com",
     },  
   },
 ] as const;

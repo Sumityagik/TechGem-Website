@@ -52,7 +52,7 @@ export default function UserDashboard() {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center pt-20">
-        <Loader2 size={32} className="animate-spin text-electric-600" />
+        <Loader2 size={32} className="animate-spin text-cyan-600" />
       </div>
     );
   }
@@ -133,8 +133,8 @@ export default function UserDashboard() {
               onClick={() => setTab(t.id)}
               className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all whitespace-nowrap ${
                 tab === t.id
-                  ? 'bg-electric-600 text-white shadow-lg shadow-electric-600/30'
-                  : 'glass text-ink-600 dark:text-ink-300 hover:text-electric-600'
+                  ? 'bg-cyan-600 text-white shadow-lg shadow-cyan-600/30'
+                  : 'glass text-ink-600 dark:text-ink-300 hover:text-cyan-600 dark:bg-yellow-600'
               }`}
             >
               <t.icon size={16} /> {t.label}
@@ -148,7 +148,7 @@ export default function UserDashboard() {
             <motion.div key="overview" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {[
-                  { label: 'Total Appointments', value: appointments.length, icon: Calendar, color: 'electric' },
+                  { label: 'Total Appointments', value: appointments.length, icon: Calendar, color: 'cyan' },
                   { label: 'Pending', value: pendingCount, icon: Clock, color: 'gold' },
                   { label: 'Confirmed', value: confirmedCount, icon: CheckCircle, color: 'green' },
                 ].map((s) => (
@@ -159,7 +159,7 @@ export default function UserDashboard() {
                         <p className="font-display text-3xl font-bold text-ink-900 dark:text-white mt-1">{s.value}</p>
                       </div>
                       <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${
-                        s.color === 'electric' ? 'bg-electric-600/10 text-electric-600' :
+                        s.color === 'cyan' ? 'bg-cyan-600/10 text-cyan-600' :
                         s.color === 'gold' ? 'bg-gold-500/10 text-gold-600' :
                         'bg-green-500/10 text-green-600'
                       }`}>
@@ -173,7 +173,7 @@ export default function UserDashboard() {
               <div className="card-base p-6">
                 <h3 className="font-display font-bold text-ink-900 dark:text-white mb-4">Recent Appointments</h3>
                 {apptLoading ? (
-                  <div className="flex justify-center py-8"><Loader2 size={24} className="animate-spin text-electric-600" /></div>
+                  <div className="flex justify-center py-8"><Loader2 size={24} className="animate-spin text-cyan-600" /></div>
                 ) : appointments.length === 0 ? (
                   <p className="text-sm text-ink-500 dark:text-ink-400 text-center py-8">No appointments yet. Book your first one!</p>
                 ) : (
@@ -203,7 +203,7 @@ export default function UserDashboard() {
                   </button>
                 </div>
                 {apptLoading ? (
-                  <div className="flex justify-center py-8"><Loader2 size={24} className="animate-spin text-electric-600" /></div>
+                  <div className="flex justify-center py-8"><Loader2 size={24} className="animate-spin text-cyan-600" /></div>
                 ) : appointments.length === 0 ? (
                   <div className="text-center py-12">
                     <CalendarDays size={40} className="text-ink-300 dark:text-ink-600 mx-auto mb-3" />
@@ -215,8 +215,8 @@ export default function UserDashboard() {
                     {appointments.map((a) => (
                       <div key={a.id} className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-xl bg-ink-50 dark:bg-white/5 border border-ink-100 dark:border-white/5">
                         <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 rounded-xl bg-electric-600/10 flex items-center justify-center flex-shrink-0">
-                            <Calendar size={18} className="text-electric-600" />
+                          <div className="w-10 h-10 rounded-xl bg-cyan-600/10 flex items-center justify-center flex-shrink-0">
+                            <Calendar size={18} className="text-cyan-600" />
                           </div>
                           <div>
                             <p className="text-sm font-semibold text-ink-900 dark:text-white">{a.service}</p>
@@ -327,8 +327,8 @@ export default function UserDashboard() {
                           onClick={() => setBooking((b) => ({ ...b, time: t }))}
                           className={`px-2 py-2 rounded-lg text-xs font-medium transition-all ${
                             booking.time === t
-                              ? 'bg-electric-600 text-white'
-                              : 'bg-ink-100 dark:bg-white/5 text-ink-600 dark:text-ink-300 hover:bg-electric-600/10'
+                              ? 'bg-cyan-600 text-white'
+                              : 'bg-ink-100 dark:bg-white/5 text-ink-600 dark:text-ink-300 hover:bg-cyan-600/10'
                           }`}
                         >
                           {t}

@@ -65,7 +65,7 @@ export default function Chatbot() {
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0, opacity: 0 }}
             onClick={() => { setOpen(true); setMinimized(false); }}
-            className="fixed bottom-6 right-6 z-50 flex items-center gap-2 px-5 py-3.5 rounded-full bg-electric-600 text-white shadow-lg shadow-electric-600/40 hover:shadow-xl hover:shadow-electric-600/50 hover:scale-105 transition-all"
+            className="fixed bottom-6 right-6 z-50 flex items-center gap-2 px-5 py-3.5 rounded-full bg-cyan-600 text-white shadow-lg shadow-cyan-600/40 hover:shadow-xl hover:shadow-cyan-600/50 hover:scale-105 transition-all"
             aria-label="Open chat"
           >
             <MessageCircle size={22} />
@@ -91,12 +91,12 @@ export default function Chatbot() {
             style={{ height: minimized ? 'auto' : 'min(560px, calc(100vh - 3rem))' }}
           >
             {/* Header */}
-            <div className="flex items-center justify-between px-4 py-3 bg-electric-600 text-white">
+            <div className="flex items-center justify-between px-4 py-3 bg-cyan-600 text-white">
               <div className="flex items-center gap-2.5">
                 <Logo size={24} showText={false} />
                 <div>
                   <p className="font-display font-semibold text-sm">TechGems Assistant</p>
-                  <p className="text-xs text-electric-100 flex items-center gap-1">
+                  <p className="text-xs text-cyan-100 flex items-center gap-1">
                     <span className="w-1.5 h-1.5 bg-green-400 rounded-full" /> Online
                   </p>
                 </div>
@@ -125,7 +125,7 @@ export default function Chatbot() {
                       <div
                         className={`max-w-[80%] px-4 py-2.5 rounded-2xl text-sm ${
                           msg.role === 'user'
-                            ? 'bg-electric-600 text-white rounded-br-md'
+                            ? 'bg-cyan-600 text-white rounded-br-md'
                             : 'bg-ink-100 dark:bg-white/10 text-ink-800 dark:text-ink-100 rounded-bl-md'
                         }`}
                       >
@@ -160,11 +160,11 @@ export default function Chatbot() {
                       onChange={(e) => setInput(e.target.value)}
                       onKeyDown={(e) => e.key === 'Enter' && sendMessage()}
                       placeholder="Type your message..."
-                      className="flex-1 px-3 py-2.5 rounded-xl bg-ink-50 dark:bg-white/5 border border-ink-200 dark:border-white/10 text-sm text-ink-900 dark:text-white placeholder-ink-400 focus:outline-none focus:ring-2 focus:ring-electric-600/50"
+                      className="flex-1 px-3 py-2.5 rounded-xl bg-ink-50 dark:bg-white/5 border border-ink-200 dark:border-white/10 text-sm text-ink-900 dark:text-white placeholder-ink-400 focus:outline-none focus:ring-2 focus:ring-cyan-600/50"
                     />
                     <button
                       onClick={sendMessage}
-                      className="p-2.5 rounded-xl bg-electric-600 text-white hover:bg-electric-700 transition-colors"
+                      className="p-2.5 rounded-xl bg-cyan-600 text-white hover:bg-cyan-700 transition-colors"
                       aria-label="Send"
                     >
                       <Send size={18} />
